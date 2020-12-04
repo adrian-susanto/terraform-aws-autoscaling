@@ -4,5 +4,5 @@ module "instance_profile" {
   service_name   = "fprbe"
   cluster_role   = "app"
   product_domain = "fpr"
-  environment    = "staging"
+  environment    = "testing"
 }

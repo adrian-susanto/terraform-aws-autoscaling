@@ -7,7 +7,7 @@ resource "aws_security_group" "fprbe-app" {
     Name          = "fprbe-app"
     Service       = "fprbe"
     ProductDomain = "fpr"
-    Environment   = "staging"
+    Environment   = "testing"
     Description   = "Security group for fprbe-app"
     ManagedBy     = "terraform"
   }

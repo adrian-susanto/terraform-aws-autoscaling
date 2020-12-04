@@ -1,7 +1,7 @@
 module "asg" {
-  source = "../../"
+  source              = "../../"
   service_name        = "fprbe"
-  environment         = "staging"
+  environment         = "testing"
   product_domain      = "fpr"
   description         = "Instances of fprbe-app"
   application         = "java-8"
@@ -14,14 +14,11 @@ module "asg" {
 
   image_filters = [
     {
-      # See https://docs.aws.amazon.com/cli/latest/reference/ec2/describe-images.html for complete filter options
-      name   = "name"
-      values = ["tvlk/ubuntu-16/tsi/java-8*"]
-    },
-    {
+      # {  #   # See https://docs.aws.amazon.com/cli/latest/reference/ec2/describe-images.html for complete filter options  #   name   = "name"  #   values = ["tvlk/ubuntu-16/tsi/java-8*"]  # },
+
       # If you want to directly specify the image ID
       name   = "image-id"
-      values = ["ami-0ee74cd429a4a5143"]
+      values = ["ami-061eb2b23f9f8839c"]
     },
   ]
 

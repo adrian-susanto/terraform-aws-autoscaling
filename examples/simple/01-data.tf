@@ -1,8 +1,17 @@
+provider "random" {
+  version = ">= 1.2.0, < 3.0.0"
+}
+
+provider "aws" {
+  region  = "ap-southeast-1"
+  version = "2.7.0"
+}
+
 data "aws_caller_identity" "current" {}
 
 data "aws_vpc" "staging" {
   tags = {
-    Name = "staging"
+    Name = "fpr-dev"
   }
 }
 

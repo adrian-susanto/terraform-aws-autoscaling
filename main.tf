@@ -12,7 +12,7 @@ module "asg_name" {
   resource_type = "autoscaling_group"
 
   keepers = {
-    image_id                  = "${data.aws_ami.latest_service_image.id}"
+    image_id                  = "ami-061eb2b23f9f8839c"
     instance_profile          = "${var.instance_profile_name}"
     key_name                  = "${var.key_name}"
     security_groups           = "${join(",", sort(var.security_groups))}"
@@ -28,7 +28,7 @@ module "asg_name" {
 resource "aws_launch_template" "main" {
   name = "${module.launch_template_name.name}"
 
-  image_id = "${data.aws_ami.latest_service_image.id}"
+  image_id = "ami-061eb2b23f9f8839c"
 
   iam_instance_profile {
     name = "${var.instance_profile_name}"
