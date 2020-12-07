@@ -31,10 +31,22 @@ module "asg" {
 
   launch_template_overrides = [
     {
-      "instance_type" = "t2.large"
+      "instance_type" = "t2.nano"
     },
     {
-      "instance_type" = "t3.large"
+      "instance_type" = "t3.nano"
+    },
+  ]
+
+  additional_tags = {
+    Team = "ppr-data"
+  }
+
+  asg_tags = [
+    {
+      key                 = "Team"
+      value               = "ppr-data-asg"
+      propagate_at_launch = false
     },
   ]
 }
